@@ -16,34 +16,43 @@ class Display {
 
     borrar() {
         this.valorActual = this.valorActual.toString().slice(0, -1);
-        this.ImprimirValores();
+        this.imprimirValores();
     }
 
     borrarTodo() {
         this.valorActual = "";
         this.valorAnterior = "";
         this.tipoOperacion = undefined;
-        this.ImprimirValores();
+        this.imprimirValores();
+    }
+
+    masmenos() {
+        if (this.valorActual === "") return
+        const valorActual = parseFloat(this.valorActual);
+        this.valorActual = valorActual * -1;
+        this.valorActual.toString();
+        this.tipoOperacion = undefined;
+        this.imprimirValores();
     }
 
     computar(tipo) {
-        this.tipoOperacion !== "igual" && this.calcular();
+        this.tipoOperacion !== 'igual' && this.calcular();
         this.tipoOperacion = tipo;
         this.valorAnterior = this.valorActual || this.valorAnterior;
-        this.valorActual = "";
-        this.ImprimirValores();
+        this.valorActual = '';
+        this.imprimirValores();
     }
 
     agregarNumero(numero) {
-        if (numero === "." && this.valorActual.includes(".")) return
+        if (numero === '.' && this.valorActual.includes('.')) return
         this.valorActual = this.valorActual.toString() + numero.toString();
-        this.ImprimirValores();
+        this.imprimirValores();
     }
 
 
-    ImprimirValores() {
+    imprimirValores() {
         this.displayValorActual.textContent = this.valorActual;
-        this.displayValorAnterior.textContent = `${this.valorAnterior} ${this.signos[this.tipoOperacion] || ""}`;
+        this.displayValorAnterior.textContent = `${this.valorAnterior} ${this.signos[this.tipoOperacion] || ''}`;
     };
 
     calcular() {

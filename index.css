@@ -54,6 +54,7 @@ button {
 
 .gray-btn {
     background-color: #A5A5A5;
+    color: #111111;
 }
 
 .black-btn {
@@ -107,8 +108,14 @@ button:focus {
 
 #valor-actual {
     font-size: 2em;
+    cursor: pointer;
 }
+
 
 #valor-anterior {
     font-size: 2.5em;
+}
+
+.animacion {
+    opacity: 0.8 ease-out;
 }
