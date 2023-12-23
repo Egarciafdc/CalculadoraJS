@@ -82,6 +82,12 @@ body {
     margin-left: 24px;
 }
 
+.orange-btn .btntxt {
+    margin-top: 9px;
+    font-size: 42px;
+}
+
+
 .gray-btn {
     background-color: #A5A5A5;
 }
