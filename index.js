@@ -7,6 +7,7 @@ const botonBorrarTodo = document.querySelector(".borrarT")
 
 const display = new Display(displayValorAnterior, displayValorActual)
 var band = 0;
+var b2 = 0;
 
 botonesNum.forEach(boton => {
     boton.addEventListener("click", () => {

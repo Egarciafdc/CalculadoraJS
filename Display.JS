@@ -26,6 +26,15 @@ class Display {
         this.imprimirValores();
     }
 
+    // masmenos() {
+    //     if (this.valorActual === "") return
+    //     const valorActual = parseFloat(this.valorActual);
+    //     this.valorActual = valorActual * -1;
+    //     this.valorActual.toString();
+    //     this.tipoOperacion = undefined;
+    //     this.imprimirValores();
+    // }
+
     masmenos() {
         if (this.valorActual === "") return
         const valorActual = parseFloat(this.valorActual);
@@ -34,6 +43,17 @@ class Display {
         this.tipoOperacion = undefined;
         this.imprimirValores();
     }
+
+
+    percent() {
+        if (this.valorActual === "") return
+        const valorActual = parseFloat(this.valorActual);
+        this.valorActual = valorActual / 100;
+        this.valorActual.toString();
+        this.tipoOperacion = undefined;
+        this.imprimirValores();
+    }
+
 
     computar(tipo) {
         this.tipoOperacion !== 'igual' && this.calcular();
